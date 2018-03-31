@@ -1,0 +1,68 @@
+server:
+  session:
+    timeout: 600
+  port: 8100
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  datasource:
+        url: jdbc:mysql://140.143.234.53:3306/security?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: 19940509WYC@
+        tomcat:
+          initial-size: 5
+          min-idle: 5
+          max-active: 20
+          max-wait: 60000
+          time-between-eviction-runs-millis: 60000
+          min-evictable-idle-time-millis: 30000
+          validation-query: select 1+1
+          test-while-idle: true
+          test-on-borrow: false
+          test-on-return: false
+        dbcp2:
+          pool-prepared-statements: true
+        hikari:
+          maximum-pool-size: 20
+        driver-class-name: com.mysql.jdbc.Driver
+        platform: org.hibernate.dialect.MySQL5Dialect
+ ##热部署配置开始
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+  ##热部署配置结束 
+  ##spring session管理 用于集群管理
+  redis:
+    host: 47.94.90.76
+  session:
+    store-type: redis
+
+##自定义登陆表单配置
+##yichao:
+  ##security:
+    ##browser:
+      ##loginPage: /dome_signIn.html
+## 自定义登陆成功/失败返回
+##yichao:
+  ##security:
+    ##browser:
+      ##login-type: json
+##注册页面
+yichao:
+  security:
+    browser:
+      sign-up-url: /demo-register.html
+    social:
+     qq:
+       app-id: 101459410
+       app-secret: a33914ed397b52360ac1548ec520852d
+     wx:
+        app-id: wxd99431bbff8305a0
+        app-secret: 60f78681d063590a469f1b297feff3c4
