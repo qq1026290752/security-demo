@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @author w4837
  *
  */
-@Component("connectionSignUp")
+//@Component("connectionSignUp")
 public class DemoConnectionSignUp implements ConnectionSignUp {
 
 	@Override

@@ -1,9 +1,7 @@
 package cn.yichao.security.config;
   
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -29,7 +27,7 @@ public class MyUserDetailsServcie implements UserDetailsService,SocialUserDetail
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		return buildUser(userName);
 	}
-
+	//用户必须要有ROLE_USER 才可以登录 服务提供商
 	private SocialUserDetails buildUser(String userId) {
 		// 根据用户名查找用户信息
 		//根据查找到的用户信息判断用户是否被冻结
@@ -37,7 +35,7 @@ public class MyUserDetailsServcie implements UserDetailsService,SocialUserDetail
 		log.info("数据库密码是:"+password);
 		return new SocialUser(userId, password,
 				true, true, true, true,
-				AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+				AuthorityUtils.commaSeparatedStringToAuthorityList("admin,ROLE_USER"));
 	}
 
 	/**

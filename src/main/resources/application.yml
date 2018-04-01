@@ -1,7 +1,7 @@
 server:
   session:
     timeout: 600
-  port: 8100
+  port: 80
   tomcat:
     uri-encoding: UTF-8
 spring:
@@ -66,3 +66,10 @@ yichao:
      wx:
         app-id: wxd99431bbff8305a0
         app-secret: 60f78681d063590a469f1b297feff3c4
+## 配置固定的clientId 和 clientSecret
+## http://127.0.0.1:8100/oauth/authorize?response_type=code&client_id=yichao&redirect_uri=http://expmale.com&scope=all
+security: 
+  oauth2: 
+   client: 
+    clientId: yichao
+    clientSecret: yichao-secret

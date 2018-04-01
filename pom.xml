@@ -7,6 +7,7 @@
 		<groupId>cn.yichao.security.pater</groupId>
 		<artifactId>yichao-pater</artifactId>
 		<version>0.5-SNAPSHOT</version>
+		<relativePath>../yichao-pater</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>
@@ -14,11 +15,11 @@
 			<artifactId>security-app</artifactId>
 			<version>${yichao.security.version}</version>
 		</dependency>
-<!-- 		<dependency>
+ 		<!-- <dependency>	
 			<groupId>cn.yichao.security.browser</groupId>
 			<artifactId>security-browser</artifactId>
 			<version>${yichao.security.version}</version>
-		</dependency> -->
+		</dependency>  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
