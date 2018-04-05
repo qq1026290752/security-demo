@@ -10,13 +10,13 @@
 		<relativePath>../yichao-pater</relativePath>
 	</parent>
 	<dependencies>
+		<!-- <dependency> <groupId>cn.yichao.security.app</groupId> <artifactId>security-app</artifactId> 
+			<version>${yichao.security.version}</version> </dependency> -->
 		<dependency>
-			<groupId>cn.yichao.security.app</groupId>
-			<artifactId>security-app</artifactId>
+			<groupId>cn.yichao.security.browser</groupId>
+			<artifactId>security-browser</artifactId>
 			<version>${yichao.security.version}</version>
 		</dependency>
-		<!-- <dependency> <groupId>cn.yichao.security.browser</groupId> <artifactId>security-browser</artifactId> 
-			<version>${yichao.security.version}</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

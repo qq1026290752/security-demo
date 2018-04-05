@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.ServletWebRequest;
-
-import cn.yichao.security.app.social.AppSignInUtils;
 import cn.yichao.security.model.User;
 
 @RestController
@@ -20,18 +18,14 @@ public class UserController {
 	@Autowired
 	private ProviderSignInUtils providerSignInUtils;
 	 @Autowired(required = false)
-	private AppSignInUtils  appSignInUtils; 
+	/*private AppSignInUtils  appSignInUtils; */
 	
 	@PostMapping(value = "/register")
 	public void register(User user,HttpServletRequest request) {
 		//TODO:用户注册
 		String userId = user.getUsername();
-	/* if(appSignInUtils == null) {*/
-		appSignInUtils.doPostSignUp(new ServletWebRequest(request), userId);
-		/*} else {
-			providerSignInUtils.doPostSignUp(userId, new ServletWebRequest(request));
-		}*/
-		
+		//appSignInUtils.doPostSignUp(new ServletWebRequest(request), userId);
+		providerSignInUtils.doPostSignUp(userId, new ServletWebRequest(request));
 	}
 
 }
