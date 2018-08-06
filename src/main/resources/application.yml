@@ -1,6 +1,4 @@
 server:
-  session:
-    timeout: 600
   port: 80
   tomcat:
     uri-encoding: UTF-8

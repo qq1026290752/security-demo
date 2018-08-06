@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.yichao.security.demo</groupId>
@@ -10,11 +11,17 @@
 		<relativePath>../yichao-pater</relativePath>
 	</parent>
 	<dependencies>
-		<!-- <dependency> <groupId>cn.yichao.security.app</groupId> <artifactId>security-app</artifactId> 
+		<!-- <dependency> <groupId>cn.yichao.security.app</groupId>
+				 <artifactId>security-app</artifactId> 
 			<version>${yichao.security.version}</version> </dependency> -->
 		<dependency>
 			<groupId>cn.yichao.security.browser</groupId>
 			<artifactId>security-browser</artifactId>
+			<version>${yichao.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.yichao.security.rbac</groupId>
+			<artifactId>security-rbac</artifactId>
 			<version>${yichao.security.version}</version>
 		</dependency>
 		<dependency>
@@ -50,6 +57,7 @@
 		<dependency>
 			<groupId>com.github.tomakehurst</groupId>
 			<artifactId>wiremock</artifactId>
+			<version>2.17.0</version>
 		</dependency>
 		<!--热部署 -->
 		<dependency>

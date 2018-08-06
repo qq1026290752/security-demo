@@ -15,4 +15,9 @@ public class SecurityController {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		return authentication;
 	}
+	
+	@RequestMapping("/hello")
+	public String hello_word() {
+		return "hello";
+	}
 }
